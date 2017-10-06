@@ -10,7 +10,7 @@ public class OI {
 	private Joystick driver				= new Joystick(Constants.usbDriver);
 	
 	public boolean shift, score;
-	public double leftY, rightY;
+	public double leftY, rightY; //TODO why not have getters that force update via getRaw*()?
 	
 	public void getOI(){
 		//Drive Controls

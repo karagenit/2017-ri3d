@@ -82,7 +82,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopInit() {
 		Scheduler.getInstance().removeAll();
-		tele.start();
+		tele.start(); //TODO set OpControl as Drivetrain's default command?
 	}
 
 	@Override
@@ -90,7 +90,7 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 		oi.getOI();
 		dash.getDash();
-		dash.updateDash();
+		dash.updateDash(); //TODO schedule command to update dashboard automatically
 	}
 
 	@Override
