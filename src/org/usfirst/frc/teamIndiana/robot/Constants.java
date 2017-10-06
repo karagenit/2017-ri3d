@@ -8,6 +8,7 @@ public class Constants {
 	//RoboRIO PWM Mapping
 	public static int pwmDriveLeft		= 1;
 	public static int pwmDriveRight		= 2;
+	public static int pwmClimber		= 3;
 	
 	//RoboRIO DIO Mapping
 	public static int dioLeftA		= 0;
@@ -59,6 +60,7 @@ public class Constants {
 	//Robot Setting Constants
 	public static double shiftUpDefault			= 7.5;
 	public static double shiftDownDefault		= 3.0;
+	public static double climbSpeed				= 1.0;
 	
 	//Left Airship Autonomous Settings
 	public static double leftAutoSpeedDefault		= 0.8;

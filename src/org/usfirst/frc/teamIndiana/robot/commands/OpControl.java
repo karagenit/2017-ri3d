@@ -20,6 +20,8 @@ public class OpControl extends Command {
     protected void execute() {
     	Robot.drive.teleTank(Robot.oi.leftY, Robot.oi.rightY);
     	
+    	Robot.climb.climb(Robot.oi.climb);
+    	
     	if (Robot.oi.score && !gearPosition){
     		Robot.gear.gearScore();
     		gearPosition = true;

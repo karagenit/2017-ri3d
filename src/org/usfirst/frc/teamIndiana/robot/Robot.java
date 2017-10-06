@@ -4,10 +4,10 @@ import org.usfirst.frc.teamIndiana.robot.commands.AutoModeLeft;
 import org.usfirst.frc.teamIndiana.robot.commands.AutoModeRight;
 import org.usfirst.frc.teamIndiana.robot.commands.AutoModeStraight;
 import org.usfirst.frc.teamIndiana.robot.commands.OpControl;
-
+import org.usfirst.frc.teamIndiana.robot.subsystems.Climber;
 import org.usfirst.frc.teamIndiana.robot.subsystems.Drivetrain;
-import org.usfirst.frc.teamIndiana.robot.subsystems.Navigation;
 import org.usfirst.frc.teamIndiana.robot.subsystems.GearScore;
+import org.usfirst.frc.teamIndiana.robot.subsystems.Navigation;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -29,6 +29,7 @@ public class Robot extends IterativeRobot {
 	public static Drivetrain drive			= new Drivetrain();
 	public static Navigation navigation		= new Navigation();
 	public static GearScore gear			= new GearScore();
+	public static Climber climb				= new Climber();
 
 	//Variables
 	public static int autoState = 0;

@@ -9,7 +9,7 @@ public class OI {
 	
 	private Joystick driver				= new Joystick(Constants.usbDriver);
 	
-	public boolean shift, score;
+	public boolean shift, score, climb;
 	public double leftY, rightY; //TODO why not have getters that force update via getRaw*()?
 	
 	public void getOI(){
@@ -19,5 +19,6 @@ public class OI {
 		
 		shift = driver.getRawButton(Constants.controllerRB);
 		score = driver.getRawButton(Constants.controllerLB);
+		climb = driver.getRawButton(Constants.controllerLT);
 	}
 }
