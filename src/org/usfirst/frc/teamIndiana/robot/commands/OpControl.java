@@ -18,7 +18,7 @@ public class OpControl extends Command {
     }
 
     protected void execute() {
-    	Robot.drive.teleTank(Robot.oi.leftY, Robot.oi.rightY);
+    	Robot.drive.teleArcade(Robot.oi.leftY, Robot.oi.rightX);
     	
     	Robot.climb.climb(Robot.oi.climb);
     	

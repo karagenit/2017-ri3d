@@ -20,6 +20,10 @@ public class Drivetrain extends Subsystem {
 		driveOut.tankDrive(leftOutput, rightOutput);
 	}
 	
+	public void teleArcade(double power, double turning) {
+		driveOut.arcadeDrive(power, turning, false);
+	}
+	
 	public void shiftHappens(boolean gear){
 		shifting.set(gear);
 	}
