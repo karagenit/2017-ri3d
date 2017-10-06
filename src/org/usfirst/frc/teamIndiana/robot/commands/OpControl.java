@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class OpControl extends Command {
 
-	public boolean gearPosition = false;
+	public boolean gearPosition = false, highGear = false; //TODO instead of storing it here, we should have a getter in Drivetrain
 	public double leftSpeed, rightSpeed;
 	
     public OpControl() {
@@ -30,6 +30,14 @@ public class OpControl extends Command {
     		gearPosition = false;
     	} else {
     		Robot.gear.gearDefault();
+    	}
+    	
+    	if (Robot.oi.shift && !highGear) {
+    		Robot.drive.shiftHappens(true);
+    		highGear = true;
+    	} else if (!Robot.oi.shift && highGear) {
+    		Robot.drive.shiftHappens(false);
+    		highGear = false;
     	}
     }
     
