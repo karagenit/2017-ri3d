@@ -60,7 +60,5 @@ public class AutoModeLeft extends Command {
     	Robot.drive.stahp();
     }
 
-    protected void interrupted() {
-    	Robot.drive.stahp();
-    }
+    protected void interrupted() {} //calls end() automatically
 }
