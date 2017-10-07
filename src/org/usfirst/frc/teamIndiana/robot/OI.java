@@ -17,8 +17,8 @@ public class OI {
 		leftY = -1.0 * Deadband.calcDeadbandOut(driver.getRawAxis(Constants.controllerLY));
 		rightY = -1.0 * Deadband.calcDeadbandOut(driver.getRawAxis(Constants.controllerRY));
 		
-		shift = driver.getRawButton(Constants.controllerRB);
+		shift = driver.getRawAxis(Constants.controllerRT)  > 0.8;
 		score = driver.getRawButton(Constants.controllerLB);
-		climb = driver.getRawButton(Constants.controllerLT);
+		climb = driver.getRawButton(Constants.controllerLT); //TODO this actually is the B button
 	}
 }
