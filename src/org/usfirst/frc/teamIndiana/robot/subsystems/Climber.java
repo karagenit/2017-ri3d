@@ -20,8 +20,8 @@ public class Climber extends Subsystem {
     
     public void climb(boolean climb) {
     	if (climb) {
-    		climberLeft.set(Constants.climbSpeed);
-    		climberRight.set(-Constants.climbSpeed);
+    		climberLeft.set(-Constants.climbSpeed);
+    		climberRight.set(Constants.climbSpeed);
     	} else {
     		climberLeft.set(0);
     		climberRight.set(0);
