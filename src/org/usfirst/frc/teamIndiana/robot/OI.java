@@ -20,6 +20,6 @@ public class OI {
 		shift = driver.getRawAxis(Constants.controllerRT)  > 0.8;
 		rightX = -1.0 * Deadband.calcDeadbandOut(driver.getRawAxis(Constants.controllerRX));
 		score = driver.getRawButton(Constants.controllerLB);
-		climb = driver.getRawButton(Constants.controllerLT); //TODO this actually is the B button
+		climb = driver.getRawButton(Constants.controllerB);
 	}
 }
