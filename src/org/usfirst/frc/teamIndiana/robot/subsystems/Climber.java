@@ -2,7 +2,7 @@ package org.usfirst.frc.teamIndiana.robot.subsystems;
 
 import org.usfirst.frc.teamIndiana.robot.Constants;
 
-import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -10,17 +10,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Climber extends Subsystem {
 
-    private final Spark climber;
+    private final Talon climberLeft;
+    private final Talon climberRight;
     
     public Climber() {
-    	climber = new Spark(Constants.pwmClimber);
+    	climberLeft = new Talon(Constants.pwmClimberLeft);
+    	climberRight = new Talon(Constants.pwmClimberRight);
     }
     
     public void climb(boolean climb) {
     	if (climb) {
-    		climber.set(Constants.climbSpeed);
+    		climberLeft.set(Constants.climbSpeed);
+    		climberRight.set(-Constants.climbSpeed);
     	} else {
-    		climber.set(0);
+    		climberLeft.set(0);
+    		climberRight.set(0);
     	}
     }
 

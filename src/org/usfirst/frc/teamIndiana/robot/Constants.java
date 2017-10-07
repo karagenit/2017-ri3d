@@ -8,7 +8,8 @@ public class Constants {
 	//RoboRIO PWM Mapping
 	public static int pwmDriveLeft		= 1;
 	public static int pwmDriveRight		= 2;
-	public static int pwmClimber		= 3;
+	public static int pwmClimberLeft	= 3;
+	public static int pwmClimberRight	= 4;
 	
 	//RoboRIO DIO Mapping
 	public static int dioLeftA		= 0;
