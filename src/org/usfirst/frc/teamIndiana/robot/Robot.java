@@ -3,6 +3,7 @@ package org.usfirst.frc.teamIndiana.robot;
 import org.usfirst.frc.teamIndiana.robot.commands.AutoModeLeft;
 import org.usfirst.frc.teamIndiana.robot.commands.AutoModeRight;
 import org.usfirst.frc.teamIndiana.robot.commands.AutoModeStraight;
+import org.usfirst.frc.teamIndiana.robot.commands.BaselineAuton;
 import org.usfirst.frc.teamIndiana.robot.commands.OpControl;
 import org.usfirst.frc.teamIndiana.robot.subsystems.Climber;
 import org.usfirst.frc.teamIndiana.robot.subsystems.Drivetrain;
@@ -58,19 +59,20 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().removeAll();
 
 		//Autonomous Mode Selection
-		switch (dash.autoMode) {
-			case 1:
-				leftPegAuto.start();
-				break;
-			case 2:
-				centerPegAuto.start();
-				break;
-			case 3:
-				rightPegAuto.start();
-				break;
-			default:
-				break;
-		}
+//		switch (dash.autoMode) {
+//			case 1:
+//				leftPegAuto.start();
+//				break;
+//			case 2:
+//				centerPegAuto.start();
+//				break;
+//			case 3:
+//				rightPegAuto.start();
+//				break;
+//			default:
+//				break;
+//		}
+		new BaselineAuton().start();
 	}
 	
 	@Override
