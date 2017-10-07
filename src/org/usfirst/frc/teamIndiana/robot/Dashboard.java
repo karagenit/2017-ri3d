@@ -1,5 +1,6 @@
 package org.usfirst.frc.teamIndiana.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Dashboard {
@@ -10,6 +11,8 @@ public class Dashboard {
 	public double centerAutoSpeed, centerAutoToPeg, centerAutoScore, centerAutoClear;
 	public double rightAutoSpeed, rightAutoStraight, rightAutoTurn, rightAutoToPeg, rightAutoScore, rightAutoClear;
 	public int autoMode;
+	public SendableChooser<Boolean> arcadeDrive;
+	public boolean useArcade;
 	
 	public void initDash() {
 		SmartDashboard.putBoolean("Reset", false);
@@ -36,6 +39,11 @@ public class Dashboard {
 		SmartDashboard.putNumber("Right Auto Time - Score", Constants.rightAutoClearDefault);
 
 		SmartDashboard.putNumber("Controller Deadband", Constants.initDeadband);
+		
+		arcadeDrive = new SendableChooser<>();
+		arcadeDrive.addDefault("Tank Drive", false);
+		arcadeDrive.addObject("Arcade Drive", true);
+		SmartDashboard.putData("Drive Mode", arcadeDrive);
 	}
 	
 	public void updateDash() {
@@ -86,5 +94,7 @@ public class Dashboard {
 		if (SmartDashboard.getBoolean("Reset", false)) {
 			Robot.navigation.resetSensors();
 		}
+		
+		useArcade = arcadeDrive.getSelected();
 	}
 }

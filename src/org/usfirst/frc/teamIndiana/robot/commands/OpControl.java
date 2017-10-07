@@ -18,7 +18,11 @@ public class OpControl extends Command {
     }
 
     protected void execute() {
-    	Robot.drive.teleArcade(Robot.oi.leftY, Robot.oi.rightX);
+    	if(Robot.dash.useArcade) {
+    		Robot.drive.teleArcade(Robot.oi.leftY, Robot.oi.rightX);
+    	} else {
+    		Robot.drive.teleTank(Robot.oi.leftY, Robot.oi.rightY);
+    	}
     	
     	Robot.climb.climb(Robot.oi.climb);
     	
