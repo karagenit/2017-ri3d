@@ -91,7 +91,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		oi.getOI();
+		oi.getOI(); //TODO just update when values requested by OpControl?
 		dash.getDash();
 		dash.updateDash(); //TODO schedule command to update dashboard automatically
 	}

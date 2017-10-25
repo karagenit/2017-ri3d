@@ -36,30 +36,14 @@ public class OpControl extends Command {
     		Robot.gear.gearDefault();
     	}
     	
-    	if (isUpshift() && !highGear) {
+    	if (Robot.oi.doUpshift && !highGear) {
     		Robot.drive.shiftHappens(true);
     		highGear = true;
-    	} else if (isDownshift() && highGear) {
+    	} else if (Robot.oi.doDownshift && highGear) {
     		Robot.drive.shiftHappens(false);
     		highGear = false;
     	}
     	
-    }
-    
-    private boolean isUpshift() {
-    	if(Robot.dash.useArcade) {
-    		return Math.abs(Robot.oi.leftY) > 0.9;
-    	} else {
-    		return Math.abs(Robot.oi.leftY) > 0.9 && Math.abs(Robot.oi.rightY) > 0.9;
-    	}
-    }
-    
-    private boolean isDownshift() {
-    	if(Robot.dash.useArcade) {
-    		return Math.abs(Robot.oi.leftY) < 0.5;
-    	} else {
-    		return Math.abs(Robot.oi.leftY) < 0.5 && Math.abs(Robot.oi.rightY) > 0.9;
-    	}
     }
     
     protected boolean isFinished() {

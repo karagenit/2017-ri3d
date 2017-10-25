@@ -11,8 +11,8 @@ public class Dashboard {
 	public double centerAutoSpeed, centerAutoToPeg, centerAutoScore, centerAutoClear;
 	public double rightAutoSpeed, rightAutoStraight, rightAutoTurn, rightAutoToPeg, rightAutoScore, rightAutoClear;
 	public int autoMode;
-	public SendableChooser<Boolean> arcadeDrive;
-	public boolean useArcade;
+	public SendableChooser<Boolean> arcadeDrive, autoShift;
+	public boolean useArcade, useAutoShift;
 	
 	public void initDash() {
 		SmartDashboard.putBoolean("Reset", false);
@@ -44,6 +44,11 @@ public class Dashboard {
 		arcadeDrive.addDefault("Tank Drive", false);
 		arcadeDrive.addObject("Arcade Drive", true);
 		SmartDashboard.putData("Drive Mode", arcadeDrive);
+
+		autoShift = new SendableChooser<>();
+		autoShift.addDefault("Auto Shift Enable", true);
+		autoShift.addObject("Auto Shift Disable", false);
+		SmartDashboard.putData("Auto Shift", autoShift);
 	}
 	
 	public void updateDash() {
@@ -96,5 +101,6 @@ public class Dashboard {
 		}
 		
 		useArcade = arcadeDrive.getSelected();
+		useAutoShift = autoShift.getSelected();
 	}
 }
